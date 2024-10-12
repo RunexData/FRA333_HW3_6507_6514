@@ -34,15 +34,15 @@ for theta1 in theta1_wrkspce:
             tau = computeEffortHW3(q ,w)
 
             # Showing inputs along with outputs
+            print('Singularity :' , singularity) #คำถามข้อที่ 2
+
             print('Q :' , q)
 
             print('Input Force :' , w)
 
-            print('Jacobian Matrics :\n' , J_e )
+            print('Jacobian Matrics :\n' , J_e ) #คำถามข้อที่ 1
 
-            print('Singularity :' , singularity)
-
-            print('Joint Effort :\n' , tau)
+            print('Joint Effort :\n' , tau) #คำถามข้อที่ 
 
             print('\n', 'x' * 100 , '\n' )
 
