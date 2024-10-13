@@ -18,6 +18,86 @@
 - Input : $q_1$, $q_2$, $q_3$ ซึ่งเป็น ค่าของ Joint Configuration ของแขนกล
 
 และมี Ouput เป็น $J^{6x3}$ หรือก็คือ Endeffector Jacobian Matric 
+```math
+J_e(q)_{6\times3} = 
+    \begin{bmatrix}
+        Jv_e(q)_{3\times3} \\
+        Jw_e(q)_{3\times3}
+    \end{bmatrix}
+```
+
+โดย
+
+```math
+Jv_e(q)_{3\times3} = 
+    \begin{bmatrix}
+
+        R^0_1
+        \begin{bmatrix}
+            0 \\
+            0 \\
+            1
+        \end{bmatrix}
+        \times
+        (P^0_e - P^0_1) &
+
+        R^0_2
+            \begin{bmatrix}
+            0 \\
+            0 \\
+            1
+        \end{bmatrix}
+        \times
+        (P^0_e - P^0_2) &
+
+        R^0_3
+        \begin{bmatrix}
+            0 \\
+            0 \\
+            1
+        \end{bmatrix}
+        \times
+        (P^0_e - P^0_3)
+
+    \end{bmatrix}
+```
+
+และ
+
+```math
+Jw_e(q)_{3\times3} = 
+    \begin{bmatrix}
+
+        R^0_1
+        \begin{bmatrix}
+            0 \\
+            0 \\
+            1
+        \end{bmatrix} &
+
+        R^0_2
+        \begin{bmatrix}
+            0 \\
+            0 \\
+            1
+        \end{bmatrix} &
+
+        R^0_3
+        \begin{bmatrix}
+            0 \\
+            0 \\
+            1
+        \end{bmatrix}
+
+    \end{bmatrix}
+```
+
+**เนื่องจากแขนกลมีแค่ 3 DoF ทำให้สามารถควบคุมได้แค่ linear velocity เท่านั้นทำให้สามารถลดรูปของ  Jacobian ได้เป็น**
+
+```math
+J_{reduce}(q)_{3\times3} = Jv(q)_{3\times3}
+
+```
 
 # checkSingularityHW3
 โดยการหา Singfularity จะมีค่าที่ต้องกำหนดคือ
@@ -49,6 +129,26 @@ m < \varepsilon
 - Input : $w_1$, $w_2$, $w_3$, $w_4$, $w_5$, $w_6$ ซึ่งเป็น ค่า Wrench ที่กระทำต่อ $F_e$
 
 และมี Ouput เป็น $\tau^{3x1}$ หรือก็คือ Joint Effort
+โดย Wrench คือ
+
+```math
+W_{6\times1} = 
+    \begin{bmatrix}
+        moment(n^e)_{3\times1} \\
+        force(f^e)_{3\times1} \\
+    \end{bmatrix}
+```
+
+**เนื่องจากแขนกลมีแค่ 3 DoF ทำให้สามารถควบคุมได้แค่ force เท่านั้นทำให้สามารถลดรูปของ wrench ได้เป็น**
+
+```math
+W_{3\times1} = force(f^e)_{3\times1}
+```
+
+โดยในการหา Effort ของแต่ละ Joint นั้นมาจากสมการ
+```math
+\tau_{3x1} = J_{reduce}^T(q)W
+```
 
 # How to use
 Download หรือ Clone Githb นี้ 
