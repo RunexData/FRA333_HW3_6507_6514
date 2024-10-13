@@ -64,7 +64,7 @@ def computeEffortHW3(q:list[float], w:list[float])->list[float]:
     J_red = endEffectorJacobianHW3(q)[:3, :3]
 
     # Reduced wrench for linear force
-    w_force = np.array(w).reshape(6,1)[3:, :]
+    w_force = np.array(w).reshape(6,1)[3:, :] 
 
     # Calculate effort from the joint
     J_trans = np.transpose(J_red)
