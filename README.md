@@ -19,3 +19,27 @@
 
 และมี Ouput เป็น $J^{6x6}$ หรือก็คือ Endeffector Jacobian Matric 
 
+# checkSingularityHW3
+โดยการหา Singfularity จะมีค่าที่ต้องกำหนดคือ
+- Input : $q_1$, $q_2$, $q_3$ ซึ่งเป็น ค่าของ Joint Configuration ของแขนกล]
+
+และมี Ouput เป็น Flag 
+- True เมื่อยุ่ในสสถานะ Singularity 
+- False เมื่ออยู่ในสถานะปกติ
+
+โดยจะใช้ค่า Manipulability ของแขนกลมาเปรียบเทียบกับค่า $\varepsilon$
+โดย
+~~~math
+\varepsilon = 0.0001
+~~~
+
+และ 
+~~~math
+m = \det(J_{reduce})
+~~~
+
+ แขนกลจะอยุ่ในสถานะ Singularity ก็ต่อเมื่อ 
+~~~math
+m < \varepsilon
+~~~
+
