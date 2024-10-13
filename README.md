@@ -91,8 +91,7 @@ Jw_e(q)_{3\times3} =
 
     \end{bmatrix}
 ```
-
-**เนื่องจากแขนกลมีแค่ 3 DoF ทำให้สามารถควบคุมได้แค่ linear velocity เท่านั้นทำให้สามารถลดรูปของ  Jacobian ได้เป็น**
+**แขนกลมี 3DOF ทำให้ควบคุมได้แค่ Linear Velocity จึงสามารถลดรูปได้ดังนี้**
 
 ```math
 J_{reduce}(q)_{3\times3} = Jv(q)_{3\times3}
@@ -138,8 +137,7 @@ W_{6\times1} =
         force(f^e)_{3\times1} \\
     \end{bmatrix}
 ```
-
-**เนื่องจากแขนกลมีแค่ 3 DoF ทำให้สามารถควบคุมได้แค่ force เท่านั้นทำให้สามารถลดรูปของ wrench ได้เป็น**
+**แขนกลมี 3DOF ทำให้ควบคุมได้แค่ Force จึงสามารถลดรูปได้ดังนี้**
 
 ```math
 W_{3\times1} = force(f^e)_{3\times1}
@@ -151,7 +149,7 @@ W_{3\times1} = force(f^e)_{3\times1}
 ```
 
 # How to use
-Download หรือ Clone Githb นี้ 
+Download หรือ Clone Github นี้ 
 ~~~
 git clone https://github.com/RunexData/FRA333_HW3_6507_6514.git
 ~~~
