@@ -17,7 +17,7 @@
 โดยการหา Jacobian Matrics จะมีค่าที่ต้องกำหนดคือ
 - Input : $q_1$, $q_2$, $q_3$ ซึ่งเป็น ค่าของ Joint Configuration ของแขนกล
 
-และมี Ouput เป็น $J^{6x6}$ หรือก็คือ Endeffector Jacobian Matric 
+และมี Ouput เป็น $J^{6x3}$ หรือก็คือ Endeffector Jacobian Matric 
 
 # checkSingularityHW3
 โดยการหา Singfularity จะมีค่าที่ต้องกำหนดคือ
@@ -67,5 +67,33 @@ Input_testScript.py
 ~~~
 
 **โดยการ Input ค่าใน Input_testScript.py จะเป็นดังนี้**
+เมื่อ Run File แล้วจะให้เลือก Mode 1-5 เป็นดังภาพด้านล่าง
+![Mode](Picture/Mode.png)
 
-   
+# ตัวอย่าง เลือก Mode 1 : Jacobian
+
+โดยค่าที่ต้อง Input คือ $q_1$, $q_2$, $q_3$ เมื่อ Input ค่าเสร็จ Jacobian Metric จะออกมาดังรูป 
+
+![Jacobian Mode](Picture/Jacobian.png)
+
+โดยที่ Mode 1-2 และ 4 จะ Input ค่าเหมือนกันเพราะ ไม่จำเป็นต้องมี Wrench เข้ามาคำนวณในการ Jacobian และ Singularity
+
+
+
+# ตัวอย่าง เลือก Mode 3 : Joint Effort
+
+โดยค่าที่ต้อง Input คือ $q_1$, $q_2$, $q_3$ และ $w_1$, $w_2$, $w_3$, $w_4$, $w_5$, $w_6$
+เมื่อ Input ค่าทั้งหมดเสร็จ Joint Effort จะออกมาดังรูป
+
+![JointEffort Mode](Picture/JointEffort.png)
+
+โดยที่ Mode 3 และ 5 จะ Input ค่าเหมือนกันเพราะ จำเป็นต้องมีทั้งค่า q และ Wrench เข้ามาคำนวณในการ Joint Effort 
+
+# Reference 
+- [The Ultimate Guide to Jacobian Matrices for Robotics](https://automaticaddison.com/the-ultimate-guide-to-jacobian-matrices-for-robotics/)
+- [พื้นฐานวิทยาการหุ่นยนต์ : เมตริกซ์จาโคเบียนของแขนกล](https://www.youtube.com/watch?v=exG5zOAm7pA&list=PLHnZZE5j6C65J4-1t-azzmceXevAtWbRf&index=11)
+
+
+
+จิรภัทร เขื่อนเพชร 65340500007\
+ชวภณ วชิรานิรมิต 65340600014

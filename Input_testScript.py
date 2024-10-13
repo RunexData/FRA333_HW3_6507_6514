@@ -1,10 +1,3 @@
-# file สำหรับตรวจคำตอบ
-# ในกรณีที่มีการสร้าง function อื่น ๆ ให้ระบุว่า input-output คืออะไรด้วย
-'''
-ชื่อ_รหัส(ex: ธนวัฒน์_6461)
-1. จิรภัทร_6507
-2. ชวภณ_6514
-'''
 # import libraries
 import numpy as np
 from FRA333_HW3_ุ6507_6514 import endEffectorJacobianHW3 ,checkSingularityHW3 ,computeEffortHW3
@@ -112,7 +105,4 @@ if(mode == 5):
     print('Singularity :' , singularity)
     print('Joint Effort :\n' , tau)
     print('\n', 'x' * 100 , '\n' )
-
-else:
-    print('--ERROR--')
 
